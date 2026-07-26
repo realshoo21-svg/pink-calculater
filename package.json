@@ -1,0 +1,40 @@
+{
+  "name": "scientific-master-calculator",
+  "version": "1.0.0",
+  "description": "Premium Offline Scientific Calculator PWA with Beautiful Pink Theme",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server",
+    "build": "echo 'No build needed - this is a pure static PWA'",
+    "test": "echo 'Manual testing recommended'",
+    "deploy:vercel": "vercel deploy",
+    "deploy:netlify": "netlify deploy --prod"
+  },
+  "keywords": [
+    "calculator",
+    "scientific",
+    "pwa",
+    "offline",
+    "mathematics",
+    "progressive-web-app"
+  ],
+  "author": "Shoo ❤️",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/scientific-calculator"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "vercel": "latest",
+    "netlify-cli": "latest"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "supports service-worker"
+  ]
+}

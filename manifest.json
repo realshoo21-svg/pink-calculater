@@ -1,0 +1,65 @@
+{
+  "name": "Scientific Master Calculator",
+  "short_name": "Sci Calculator",
+  "description": "Premium Offline Scientific Calculator PWA with Beautiful Pink Theme",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF69B4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23FF69B4' width='192' height='192' rx='45'/><text x='50%' y='50%' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dy='.3em'>π</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%23FF69B4' width='512' height='512' rx='120'/><text x='50%' y='50%' font-size='280' font-weight='bold' fill='white' text-anchor='middle' dy='.3em'>π</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23FFB6C1' width='192' height='192' rx='45'/><text x='50%' y='50%' font-size='100' font-weight='bold' fill='%23FF69B4' text-anchor='middle' dy='.3em'>π</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%23FFB6C1' width='512' height='512' rx='120'/><text x='50%' y='50%' font-size='280' font-weight='bold' fill='%23FF69B4' text-anchor='middle' dy='.3em'>π</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "productivity",
+    "utilities"
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%23FFB6C1' width='540' height='720'/><text x='50%' y='50%' font-size='200' font-weight='bold' fill='%23FF69B4' text-anchor='middle' dy='.3em'>π</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Open Calculator",
+      "short_name": "Calculate",
+      "description": "Open the scientific calculator",
+      "url": "/index.html",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23FF69B4' width='192' height='192' rx='45'/><text x='50%' y='50%' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dy='.3em'>π</text></svg>",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "preferRelatedApplications": false
+}

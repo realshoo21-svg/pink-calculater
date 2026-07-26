@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Offline Scientific Calculator PWA - Full-featured calculator with pink theme">
+    <meta name="theme-color" content="#FF69B4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Scientific Master Calculator">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23FF69B4' width='192' height='192' rx='45'/><text x='50%' y='50%' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dy='.3em'>π</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23FF69B4' width='180' height='180' rx='40'/><text x='50%' y='50%' font-size='90' font-weight='bold' fill='white' text-anchor='middle' dy='.3em'>π</text></svg>">
+    <title>Scientific Master Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-left">
+            <div class="pandas-container">
+                <div class="panda panda-1">🐼</div>
+                <div class="panda panda-2">🐼</div>
+            </div>
+            <div class="particles" id="particles"></div>
+        </div>
+
+        <div class="header-center">
+            <div class="logo-circle">
+                <span class="logo-icon">π</span>
+            </div>
+            <h1 class="app-title">Scientific Master <br> Calculator</h1>
+        </div>
+
+        <div class="header-right">
+            <button class="download-btn" id="installBtn" title="Install App">
+                <span class="download-icon">⬇️</span>
+                <span class="download-text">Download App</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Panel - Calculator -->
+        <div class="calculator-section">
+            <div class="calculator">
+                <!-- Display -->
+                <div class="display-container">
+                    <input type="text" class="display" id="display" placeholder="0" readonly>
+                    <div class="display-info" id="displayInfo"></div>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="control-buttons">
+                    <button class="btn-control" id="clearBtn">CE</button>
+                    <button class="btn-control" id="deleteBtn">⌫</button>
+                    <button class="btn-control" id="bracketBtn">()</button>
+                    <button class="btn-control" id="degreeToggle">DEG</button>
+                </div>
+
+                <!-- Memory Functions -->
+                <div class="memory-buttons">
+                    <button class="btn-memory" data-memory="mc" title="Memory Clear">MC</button>
+                    <button class="btn-memory" data-memory="mr" title="Memory Recall">MR</button>
+                    <button class="btn-memory" data-memory="mplus" title="Memory Plus">M+</button>
+                    <button class="btn-memory" data-memory="mminus" title="Memory Minus">M-</button>
+                </div>
+
+                <!-- Buttons Grid -->
+                <div class="buttons-grid">
+                    <!-- Row 1 -->
+                    <button class="btn btn-function" data-value="sqrt">√x</button>
+                    <button class="btn btn-function" data-value="cbrt">∛x</button>
+                    <button class="btn btn-function" data-value="pow2">x²</button>
+                    <button class="btn btn-function" data-value="pow3">x³</button>
+                    <button class="btn btn-function" data-value="pow">xʸ</button>
+                    <button class="btn btn-operator" data-operator="/">÷</button>
+
+                    <!-- Row 2 -->
+                    <button class="btn btn-function" data-value="sin">sin</button>
+                    <button class="btn btn-function" data-value="cos">cos</button>
+                    <button class="btn btn-function" data-value="tan">tan</button>
+                    <button class="btn btn-function" data-value="cot">cot</button>
+                    <button class="btn btn-function" data-value="sec">sec</button>
+                    <button class="btn btn-operator" data-operator="*">×</button>
+
+                    <!-- Row 3 -->
+                    <button class="btn btn-function" data-value="log">log</button>
+                    <button class="btn btn-function" data-value="ln">ln</button>
+                    <button class="btn btn-function" data-value="factorial">n!</button>
+                    <button class="btn btn-function" data-value="abs">|x|</button>
+                    <button class="btn btn-function" data-value="percent">%</button>
+                    <button class="btn btn-operator" data-operator="-">−</button>
+
+                    <!-- Row 4 -->
+                    <button class="btn btn-function" data-value="cosec">cosec</button>
+                    <button class="btn btn-function" data-value="pi">π</button>
+                    <button class="btn btn-function" data-value="e">e</button>
+                    <button class="btn btn-function" data-value="exp">eˣ</button>
+                    <button class="btn btn-function" data-value="mod">mod</button>
+                    <button class="btn btn-operator" data-operator="+">+</button>
+
+                    <!-- Row 5 -->
+                    <button class="btn btn-number" data-number="7">7</button>
+                    <button class="btn btn-number" data-number="8">8</button>
+                    <button class="btn btn-number" data-number="9">9</button>
+                    <button class="btn btn-function" data-value="reciprocal">1/x</button>
+                    <button class="btn btn-function" data-value="percent-calc">%</button>
+                    <button class="btn btn-equals" id="equalsBtn">=</button>
+
+                    <!-- Row 6 -->
+                    <button class="btn btn-number" data-number="4">4</button>
+                    <button class="btn btn-number" data-number="5">5</button>
+                    <button class="btn btn-number" data-number="6">6</button>
+                    <button class="btn btn-function" data-value="negative">±</button>
+                    <button class="btn btn-number" data-number=".">.</button>
+                    <button class="btn btn-copy" id="copyBtn" title="Copy Result">📋</button>
+
+                    <!-- Row 7 -->
+                    <button class="btn btn-number" data-number="1">1</button>
+                    <button class="btn btn-number" data-number="2">2</button>
+                    <button class="btn btn-number" data-number="3">3</button>
+                    <button class="btn btn-number" data-number="0">0</button>
+                    <button class="btn btn-function" data-value="voice" title="Voice Input">🎤</button>
+                    <button class="btn btn-share" id="shareBtn" title="Share Result">📤</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel - Tools & History -->
+        <div class="side-panels">
+            <!-- Themes Panel -->
+            <div class="panel themes-panel">
+                <h3 class="panel-title">Themes</h3>
+                <div class="themes-grid">
+                    <button class="theme-option" data-theme="default" style="background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);" title="Default Pink">
+                        <span class="theme-label">Default</span>
+                    </button>
+                    <button class="theme-option" data-theme="glitter" style="background: linear-gradient(135deg, #FF1493 0%, #FFB6C1 50%, #FF69B4 100%);" title="Glitter Pink">
+                        <span class="theme-label">Glitter</span>
+                    </button>
+                    <button class="theme-option" data-theme="neon" style="background: linear-gradient(135deg, #FF10F0 0%, #00FF88 100%);" title="Neon">
+                        <span class="theme-label">Neon</span>
+                    </button>
+                    <button class="theme-option" data-theme="rosegold" style="background: linear-gradient(135deg, #B76E79 0%, #D4A5A5 100%);" title="Rose Gold">
+                        <span class="theme-label">Rose Gold</span>
+                    </button>
+                    <button class="theme-option" data-theme="bubble" style="background: linear-gradient(135deg, #FF69B4 0%, #FFC0CB 50%, #FFE4E1 100%);" title="Bubble Pink">
+                        <span class="theme-label">Bubble</span>
+                    </button>
+                    <button class="theme-option" data-theme="sunset" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFB6C1 100%);" title="Sunset">
+                        <span class="theme-label">Sunset</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tools Panel -->
+            <div class="panel tools-panel">
+                <h3 class="panel-title">Quick Tools</h3>
+                <div class="tools-grid">
+                    <button class="tool-btn" data-tool="unit-converter" title="Unit Converter">📏</button>
+                    <button class="tool-btn" data-tool="age-calc" title="Age Calculator">🎂</button>
+                    <button class="tool-btn" data-tool="bmi-calc" title="BMI Calculator">⚖️</button>
+                    <button class="tool-btn" data-tool="random" title="Random Number">🎲</button>
+                    <button class="tool-btn" data-tool="equation-solver" title="Equation Solver">🧮</button>
+                    <button class="tool-btn" data-tool="currency" title="Currency Converter">💱</button>
+                </div>
+            </div>
+
+            <!-- History Panel -->
+            <div class="panel history-panel">
+                <div class="history-header">
+                    <h3 class="panel-title">History</h3>
+                    <div class="history-controls">
+                        <input type="text" class="history-search" id="historySearch" placeholder="Search...">
+                        <button class="history-btn" id="clearHistoryBtn" title="Clear All">🗑️</button>
+                    </div>
+                </div>
+                <div class="history-list" id="historyList">
+                    <p class="history-empty">No history yet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tools Modal -->
+    <div class="modal" id="toolsModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="tool-container" id="toolContainer"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>❤️ Developed with Love by Shoo ❤️</p>
+        <div class="footer-heart">💗</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
