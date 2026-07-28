@@ -577,9 +577,9 @@ body {
 }
 
 .tool-btn {
-    padding: 0.8rem;
-    min-height: 100px;
-    height: 100px; /* ya 120px */
+    padding: 0.5rem;
+    height: 70px;
+    min-height: 70px;
 }
 
 
