@@ -69,7 +69,6 @@ body[data-theme="sunset"] {
 
 /* Base Styles */
 html, body {
-    width: 100%;
     
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: var(--background);
