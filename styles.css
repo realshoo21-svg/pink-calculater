@@ -295,7 +295,7 @@ body {
 
 .main-container {
     display: flex;
-    flex: 1;
+    
     gap: 2rem;
     padding: 2rem;
     max-width: 1600px;
